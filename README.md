@@ -17,7 +17,7 @@ https://github.com/nodesource/distributions/blob/master/README.md
 `curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -`<br>
 `curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -`<br>
 
-## **Criando um projeto React:**
+## **Criando um projeto React.js:**
 
 `yarn create react-app (nome) --template=typescript`
 
@@ -27,9 +27,9 @@ https://github.com/nodesource/distributions/blob/master/README.md
 
 #### **SSG(Static Site Generators)** = O site estático é hospedado no servidor como ele é e, quando requisitado, é enviado para o usuário final. Essa hospedagem precisa de muito menos processador, memória e talvez até mesmo espaço em disco.(Gatsby).
 
-Next.js permite unir SPA, SSR e SSG, tudo em uma única aplicação.
+#### Next.js permite unir SPA, SSR e SSG, tudo em uma única aplicação.
 
-## Criando um projeto Next.js:
+## **Criando um projeto Next.js:**
 
 `yarn create next-app (nome)`
 
