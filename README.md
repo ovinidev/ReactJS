@@ -10,14 +10,14 @@ Repositório dedicado aos estudos de React, Next e Typescript.
 <p align="center">
 <img src="https://i.imgur.com/Q6wXoPn.png" width=750px/>
   
-## **Instalando os pacotes necessários:**
+## **Instalando o node.js:**
 
 https://github.com/nodesource/distributions/blob/master/README.md
 
 `curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -`<br>
 `curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -`<br>
 
-## **Criando um projeto React.js:**
+## **Criando um projeto React.js (com typescript):**
 
 `yarn create react-app (nome) --template=typescript`
 
