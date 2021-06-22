@@ -19,13 +19,13 @@ https://github.com/nodesource/distributions/blob/master/README.md
   
 ## **Para instalar o Yarn:**
 
-`curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -`
-`echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list`
+`curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -` <br>
+`echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list` <br>
   
-`sudo apt update`
-`sudo apt-get install --no-install-recommends yarn`
+`sudo apt update` <br>
+`sudo apt-get install --no-install-recommends yarn` <br>
   
-`yarn install`
+`yarn install` <br>
 
 ## **Criando um projeto React.js (com typescript):**
 
