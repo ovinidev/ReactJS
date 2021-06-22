@@ -7,6 +7,5 @@ export const Input = ({ searchValue, handleChange }) => {
       value={searchValue}
       placeholder={"Faça sua busca"}
       type="search" />
-      
   );
 }
