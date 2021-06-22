@@ -14,8 +14,8 @@ Repositório dedicado aos estudos de React, Next e Typescript.
 
 https://github.com/nodesource/distributions/blob/master/README.md
 
-`curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -`<br>
-`curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -`<br>
+`curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -`<br>
+`sudo apt-get install -y nodejs`<br>
 
 ## **Criando um projeto React.js (com typescript):**
 
