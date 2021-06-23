@@ -1,6 +1,6 @@
 import './styles.css';
 
-import { Component } from "react";
+import { Component } from 'react';
 import { Posts } from '../../components/Posts';
 import { loadPosts } from '../../utils/load-posts';
 import { Button } from '../../components/Button';
@@ -12,9 +12,8 @@ class Home extends Component {
     allPosts: [],
     page: 0,
     postsPerPage: 2,
-    searchValue: ""
+    searchValue: '',
   };
-
 
   async componentDidMount() {
     await this.loadPosts();
@@ -27,62 +26,46 @@ class Home extends Component {
       posts: postsAndPhotos.slice(page, postsPerPage),
       allPosts: postsAndPhotos,
     });
-  }
+  };
 
   loadMorePosts = () => {
-    const {
-      page,
-      postsPerPage,
-      allPosts,
-      posts
-    } = this.state;
+    const { page, postsPerPage, allPosts, posts } = this.state;
     const nextPage = page + postsPerPage;
     const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage);
     posts.push(...nextPosts);
 
     this.setState({ posts, page: nextPage });
-  }
+  };
 
   handleChange = (e) => {
     const { value } = e.target;
-    this.setState({ searchValue: value })
-  }
+    this.setState({ searchValue: value });
+  };
 
   render() {
     const { posts, page, postsPerPage, allPosts, searchValue } = this.state;
     const noMorePosts = page + postsPerPage >= allPosts.length;
 
-    const filteredPosts = !!searchValue ?
-      allPosts.filter(post => {
-        return post.title.toLowerCase().includes(searchValue.toLowerCase());
-      })
-
+    const filteredPosts = !searchValue
+      ? allPosts.filter((post) => {
+          return post.title.toLowerCase().includes(searchValue.toLowerCase());
+        })
       : posts;
 
     return (
       <section className="container">
-        {!!searchValue && (
-          <h1>Search value: {searchValue}</h1>
-        )}
+        {!!searchValue && <h1>Search value:{searchValue}</h1>}
 
-        <Input searchValue={searchValue} handleChange={this.handleChange}/>
+        <Input searchValue={searchValue} handleChange={this.handleChange} />
 
-        {filteredPosts.length > 0 && (
-          <Posts posts={filteredPosts} />
-        )}
+        {filteredPosts.length > 0 && <Posts posts={filteredPosts} />}
 
-        {filteredPosts.length === 0 && (
-          <h1>Nada encontrado</h1>
-        )}
+        {filteredPosts.length === 0 && <h1>Nada encontrado</h1>}
 
-        {!searchValue && (
-          <Button onClick={this.loadMorePosts} disabled={noMorePosts} />
-        )}
+        {!searchValue && <Button onClick={this.loadMorePosts} disabled={noMorePosts} />}
       </section>
-
     );
   }
 }
-
 
 export default Home;
