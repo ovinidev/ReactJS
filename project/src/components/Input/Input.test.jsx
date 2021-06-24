@@ -5,7 +5,7 @@ import { Input } from '.';
 describe('<Posts />', () => {
   it('should have a value of searchValue', () => {
     const fn = jest.fn();
-    render(<Input handleChange={fn} searchValue={'testando'} />);
+    render(<Input handleChange={fn} searchValue="testando" />);
 
     const input = screen.getByPlaceholderText(/Faça sua busca/i);
 
@@ -27,7 +27,7 @@ describe('<Posts />', () => {
 
   it('should match snapshot', () => {
     const fn = jest.fn();
-    const { container } = render(<Input handleChange={fn} searchValue={'testando'} />);
+    const { container } = render(<Input handleChange={fn} searchValue="testando" />);
 
     expect(container).toMatchSnapshot();
   });
