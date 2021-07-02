@@ -7,6 +7,7 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'airbnb',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
   ],
@@ -25,5 +26,9 @@ module.exports = {
   },
   rules: {
     'react/react-in-jsx-scope': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'react/jsx-filename-extension': 'off',
+    'react/require-default-props': 'off',
+    'no-shadow': 'off',
   },
 };

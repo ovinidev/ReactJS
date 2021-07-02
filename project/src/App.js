@@ -1,32 +1,52 @@
-import { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useMemo, useState } from 'react';
+import P from 'prop-types';
+
+const Posts = ({ posts }) => (
+  <div key={posts.id} className="post">
+    <h1>{posts.title}</h1>
+    <p>{posts.body}</p>
+  </div>
+);
+
+Posts.propTypes = {
+  posts: P.shape({ // Sempre que for objeto utilizar o .shape
+    id: P.number,
+    title: P.string,
+    body: P.string,
+  }),
+};
 
 function App() {
-  const [reverse, setReverse] = useState(false); // Estado, set do estado
-  const [counter, setCounter] = useState(0);
-  const reverseClass = reverse ? 'reverse' : '';
+  const [posts, setPosts] = useState([]);
+  const [value, setValue] = useState('');
 
-  const handleClick = () => {
-    setReverse(!reverse);
-    setCounter((c) => c + 1);
-  };
+  // ComponentDidMount
+  useEffect(() => {
+    setTimeout(() => {
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((r) => r.json())
+        .then((r) => setPosts(r));
+    }, 5000);
+  }, []);
 
   return (
-
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className={`App-logo ${reverseClass}`} alt="logo" />
+      <p>
+        <input
+          type="search"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </p>
 
-        <h1>
-          Contador: {counter}
-        </h1>
+      {useMemo(() => {
+        posts.map((posts) => (
+          <Posts key={posts.id} posts={posts} />
+        ));
+      }, [posts])}
 
-        <button type="button" onClick={handleClick}>
-          Reverse
-        </button>
-
-      </header>
+      { }
     </div>
   );
 }
