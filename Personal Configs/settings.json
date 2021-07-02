@@ -1,0 +1,30 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "terminal.integrated.fontFamily": "Jetbrains Mono",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "explorer.compactFolders": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.tabSize": 2,
+    "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
+    "editor.fontFamily": "'Jetbrains Mono' ,'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "300",
+    "editor.rulers": [82, 120],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.tabs.enabled": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right"
+    },
+    "window.zoomLevel": 1,
+
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "C_Cpp.updateChannel": "Insiders"
+  }
