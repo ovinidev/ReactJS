@@ -36,6 +36,7 @@ module.exports = {
     'no-shadow': 'off',
     'no-plusplus': 'off',
     'no-console': 'off',
+    'no-unused-vars': 'off',
     'import/no-extraneous-dependencies': 'off',
     'click-events-have-key-events': 'off',
   },

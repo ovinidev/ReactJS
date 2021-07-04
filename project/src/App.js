@@ -1,36 +1,57 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable no-plusplus */
-import {
-  useEffect, useState, useRef,
-} from 'react';
+/* eslint-disable no-unused-vars */
+import { createContext, useContext, useState } from 'react';
 import './App.css';
 
-function App() {
-  const [value, setValue] = useState('');
-  const contador = useRef(0);
+const globalState = { // Estado inicial
+  title: 'Titulo do contexto',
+  body: 'body do contexto',
+  counter: 0,
+};
 
-  useEffect(() => {
-    contador.current++;
-  });
+const GlobalContext = createContext(); // Criando um contexto
 
-  const handleClick = (value) => {
-    setValue(value);
-  };
+// Para ser um componente que receba filhos, utilizar o {}
 
+// eslint-disable-next-line
+const Div = ({ children }) => {
+  // Fragmentando com <> para o retorno ter mais de um componente
   return (
-    <div className="App">
-      <h2>
-        Renderizou: {contador.current} x
-      </h2>
-      <p>
-        <input
-          type="search"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-      </p>
-      <button type="button" onClick={handleClick}>Render</button>
-    </div>
+    <>
+      <H1 />
+      <P />
+    </>
+  );
+};
+
+const H1 = () => {
+  const theContext = useContext(GlobalContext);
+  const { contextState: { title, counter } } = theContext;
+
+  return <h1>{title} {counter}</h1>;
+};
+
+const P = () => {
+  const theContext = useContext(GlobalContext);
+  const {
+    contextState: { body, counter },
+    contextState,
+    setContextState,
+  } = theContext;
+
+  return <p onClick={() => setContextState((s) => ({ ...s, counter: s.counter + 1 }))}>{body}</p>;
+};
+
+function App() {
+  const [contextState, setContextState] = useState(globalState);
+
+  // Ele vai prover um contexto para outros elementos
+  // Passar um value com o objeto de estado inicial
+  // Vai passar esse valor para todos os filhos do componente
+  return (
+    <GlobalContext.Provider value={{ contextState, setContextState }}>
+      <Div />
+    </GlobalContext.Provider>
+
   );
 }
 
