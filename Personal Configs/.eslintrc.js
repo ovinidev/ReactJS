@@ -30,5 +30,11 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
     'no-shadow': 'off',
+    'no-noninteractive-element-interactions': 'off',
+    'click-events-have-key-events': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'no-plusplus': 'off',
+    'no-console': 'off',
   },
 };
