@@ -1,7 +1,6 @@
 {
     "workbench.iconTheme": "material-icon-theme",
     "liveServer.settings.donotShowInfoMsg": true,
-    "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.integrated.fontFamily": "Jetbrains Mono",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -19,12 +18,22 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "terminal.integrated.tabs.enabled": false,
     "notebook.cellToolbarLocation": {
-        "default": "right"
+        "default": "right",
     },
-    "window.zoomLevel": 1,
 
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": true,
     },
-    "C_Cpp.updateChannel": "Insiders"
+    "C_Cpp.updateChannel": "Insiders",
+    "tabnine.experimentalAutoImports": true,
+    "cSpell.language": "en,pt",
+    "window.zoomLevel": 1,
+    "cSpell.userWords": [
+        "Setando",
+        "Setar",
+        "Vini",
+        "indice",
+        "numeros",
+        "tipagem"
+    ],
   }
