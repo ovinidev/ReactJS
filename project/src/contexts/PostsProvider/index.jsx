@@ -8,7 +8,7 @@ export const PostsProvider = ({ children }) => {
   const [postsState, postsDispatch] = useReducer(reducer, data);
 
   return (
-    <PostsContext.Provider value={{postsState, postsDispatch}}>
+    <PostsContext.Provider value={{ postsState, postsDispatch }}>
       {children}
     </PostsContext.Provider>
   );

@@ -1,12 +1,15 @@
 import { PostsProvider } from '../../contexts/PostsProvider';
 import { Posts } from '../../components/Posts/index';
 import './styles.css';
+import { CounterProvider } from '../../contexts/CounterProvider';
 
 function App() {
   return (
-    <PostsProvider>
-      <Posts />
-    </PostsProvider>
+    <CounterProvider>
+      <PostsProvider>
+        <Posts />
+      </PostsProvider>
+    </CounterProvider>
   );
 }
 
