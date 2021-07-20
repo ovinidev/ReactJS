@@ -4,9 +4,6 @@
     "terminal.integrated.fontFamily": "Jetbrains Mono",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
     "explorer.compactFolders": false,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.tabSize": 2,
@@ -20,7 +17,8 @@
     "notebook.cellToolbarLocation": {
         "default": "right",
     },
-
+    "material-icon-theme.hidesExplorerArrows": false,
+    "material-icon-theme.folders.color": "#6273a6",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true,
     },
