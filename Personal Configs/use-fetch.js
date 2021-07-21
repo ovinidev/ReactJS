@@ -62,4 +62,3 @@ export const useFetch = (url, options) => {
 
   return [result, loading];
 };
-
