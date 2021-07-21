@@ -68,5 +68,6 @@ module.exports = {
     'max-len': 'off',
     'arrow-body-style': 'off',
     'default-case': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
   },
 };
