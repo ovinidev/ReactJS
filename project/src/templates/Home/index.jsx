@@ -1,44 +1,33 @@
 import { useState } from 'react';
-import { useFetch } from './use-fetch';
+import { useAsync } from './use-async';
+
+const fetchData = async () => {
+  await new Promise((r) => setTimeout(r, 2000));
+  const data = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const json = await data.json();
+
+  return json;
+};
 
 function App() {
-  const [postId, setPostId] = useState('');
-  const [result, loading] = useFetch(`https://jsonplaceholder.typicode.com/posts/${
-    postId}`, {
-    headers: {
-      abc: '200',
-    },
-  });
+  const [posts, setPosts] = useState(null);
+  const [reFetchData, result, error, status] = useAsync(fetchData, true);
 
-  if (loading) {
-    return <p>Loading...</p>;
+  if (status === 'idle') {
+    return <pre>Nada executando</pre>;
   }
 
-  const handleCLick = (id) => {
-    setPostId(id);
-  };
-
-  if (!loading && result) {
-    return (
-      <div>
-        {result?.length > 0 ? result.map((p) => (
-          <div
-            key={`post-${p.id}`}
-            onClick={() => handleCLick(p.id)}>
-            <p>{p.title}</p>
-          </div>
-        )) : (
-          <div
-            onClick={() => handleCLick(result.id)}>
-          <p>{result.title}</p>
-        </div>
-        )}
-
-      </div>
-    );
+  if (status === 'pending') {
+    return <pre>Loading...</pre>;
+  }
+  
+  if (status === 'error') {
+    return <pre>Error</pre>;
   }
 
-  return <h1>Oi</h1>;
+  if (status === 'done') {
+    return <pre>{JSON.stringify(result, null, 2)}</pre>;
+  }
 }
 
 export default App;
