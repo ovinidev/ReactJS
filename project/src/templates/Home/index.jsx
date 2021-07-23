@@ -1,43 +1,31 @@
-import { useEffect, useState } from 'react';
+export const Home = () => {
+  const [state, actions] = useCounterContext();
 
-const useMediaQuery = (queryValue) => {
-  const [match, setMatch] = useState(false);
+  const handleError = () => {
+    actions
+      .asyncError()
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e.name, ':', e.message));
+  };
 
-  useEffect(() => {
-    let isMounted = true;
-    const matchMedia = window.matchMedia(queryValue);
-
-    const handleChange = () => {
-      if (!isMounted) return;
-      setMatch(Boolean(matchMedia.matches));
-    };
-
-    matchMedia.addEventListener('change', handleChange);
-    setMatch(!!matchMedia.matches);
-    
-    return () => {
-      isMounted = false;
-      matchMedia.removeEventListener('change', handleChange);
-    };
-  }, [queryValue]);
-
-  return match;
-};
-
-function App() {
-  const huge = useMediaQuery('(min-width: 980px');
-  const background = huge ? 'green' : 'red';
-  
   return (
-    huge ? (
-      <div style={{ background }}>
-        Oi
-      </div>
-    ) : (
-      <div style={{ background }}>
-        XAU
-      </div>
-    ));
-}
+    <div>
+      <Heading />
 
-export default App;
+      <div>
+        <Button onButtonClick={actions.increase}>Increase</Button>
+        <Button onButtonClick={actions.increase}>increase</Button>
+        <Button onButtonClick={actions.decrease}>decrease</Button>
+        <Button onButtonClick={actions.reset}>reset</Button>
+        <Button onButtonClick={() => actions.setCounter({ counter: 10 })}>set 10</Button>
+        <Button onButtonClick={() => actions.setCounter({ counter: 100 })}>set 100</Button>
+        <Button disabled={state.loading} onButtonClick={actions.asyncIncrease}>
+          async increase
+        </Button>
+        <Button disabled={state.loading} onButtonClick={handleError}>
+          async error
+        </Button>
+      </div>
+    </div>
+  );
+};

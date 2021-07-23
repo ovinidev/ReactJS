@@ -52,7 +52,6 @@ module.exports = {
     'no-shadow': 'off',
     'no-plusplus': 'off',
     'no-console': 'off',
-    'no-unused-vars': 'off',
     'no-undef': 'off',
     'no-redeclare': 'off',
     'no-useless-return': 'off',
