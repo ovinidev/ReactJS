@@ -5,14 +5,16 @@ import { Menu } from './components/Menu';
 import './index.css';
 import { ABC } from './templates/ABC';
 import { App } from './templates/Home/index';
+import { Page404 } from './templates/Page404';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
     <Menu />
       <Switch>
-        <Route path="/" exact component={App} />
-        <Route path="/abc" exact component={ABC} />
+        <Route path="/abc/:slug?" component={ABC} />
+        <Route path="/" component={App} exact />
+        <Route path="*" component={Page404} exact />
         <App />
       </Switch>
     </BrowserRouter>
