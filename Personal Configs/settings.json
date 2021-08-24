@@ -11,7 +11,10 @@
     "editor.fontFamily": "'Jetbrains Mono' ,'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.fontWeight": "300",
-    "editor.rulers": [82, 120],
+    "editor.rulers": [
+        82,
+        120
+    ],
     "typescript.updateImportsOnFileMove.enabled": "always",
     "terminal.integrated.tabs.enabled": false,
     "notebook.cellToolbarLocation": {
@@ -25,7 +28,6 @@
     "C_Cpp.updateChannel": "Insiders",
     "tabnine.experimentalAutoImports": true,
     "cSpell.language": "en,pt",
-    "window.zoomLevel": 1,
     "cSpell.userWords": [
         "Setando",
         "Setar",
@@ -34,4 +36,5 @@
         "numeros",
         "tipagem"
     ],
-  }
+    "window.zoomLevel": 1,
+}
