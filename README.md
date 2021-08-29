@@ -32,10 +32,10 @@ sudo apt-get install --no-install-recommends yarn
   
 yarn install
 ```
-## **Criando um projeto React.js (com typescript):**
+## **Criando um projeto React.js:**
   
 ```
-yarn create react-app (nome) --template=typescript
+yarn create react-app (nome)
 ```
  
 #### **SPA(Single Page Application)** = Toda interface é construída no front end, toda mudança de rota continua na mesma página.(Create react app).
@@ -45,15 +45,3 @@ yarn create react-app (nome) --template=typescript
 #### **SSG(Static Site Generators)** = O site estático é hospedado no servidor como ele é e, quando requisitado, é enviado para o usuário final. Essa hospedagem precisa de muito menos processador, memória e talvez até mesmo espaço em disco.(Gatsby).
 
 #### Next.js permite unir SPA, SSR e SSG, tudo em uma única aplicação.
-
-## **Criando um projeto Next.js:**
-
-```
-yarn create next-app (nome)
-```
-
-Instalando alguns pacotes:
-
-```
-yarn add typescript @types/react @types/react-dom @types/node -D
-```
