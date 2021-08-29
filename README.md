@@ -38,10 +38,9 @@ yarn install
 yarn create react-app (nome)
 ```
  
-#### **SPA(Single Page Application)** = Toda interface é construída no front end, toda mudança de rota continua na mesma página.(Create react app).
+## **Para instalar o EsLint:**
+```
+yarn add eslint -D
 
-#### **SSR(Server Side Rendering)** = O SSR pode fornecer aos usuários um carregamento mais eficiente da aplicação, já que parte da renderização é feita no servidor.
-
-#### **SSG(Static Site Generators)** = O site estático é hospedado no servidor como ele é e, quando requisitado, é enviado para o usuário final. Essa hospedagem precisa de muito menos processador, memória e talvez até mesmo espaço em disco.(Gatsby).
-
-#### Next.js permite unir SPA, SSR e SSG, tudo em uma única aplicação.
+yarn eslint --init
+```
