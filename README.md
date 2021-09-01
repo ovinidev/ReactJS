@@ -36,6 +36,7 @@ yarn install
   
 ```
 yarn create react-app (nome)
+  
 yarn start
 ```
  
