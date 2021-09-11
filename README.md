@@ -1,17 +1,6 @@
-# ReactJS
-
-Repositório dedicado aos estudos de React e Javascript.
-
-### 👨🏻‍💻 Technologies:
-
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="60"> &nbsp;
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="imagem" width="60"> &nbsp;
-
-<br>
-
 <p align="center">
-<img src="https://i.imgur.com/Q6wXoPn.png" width=750px/>
-  
+<img src="http://lucaswebs.com/img/reactHooks.png" width="500">
+
 ## **Instalando o node.js:**
 
 https://github.com/nodesource/distributions/blob/master/README.md
